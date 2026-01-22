@@ -46,6 +46,7 @@ The Problem:
 
 /*
 OUTPUT:
+Percent of requests that were successful: 70.00 %
 /home 6
 /login 4
 /products 3
