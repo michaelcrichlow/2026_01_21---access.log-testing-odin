@@ -14,7 +14,11 @@ main :: proc() {
         }
     }
 
-    percent := (f64(len(lines_filtered)) / f64(len(lines))) * 100
+    // prevents dividing by zero if the length of the file is zero (file is empty)
+    percent: f64 = 0
+    if len(lines) > 0 {
+        percent = (f64(len(lines_filtered)) / f64(len(lines))) * 100
+    }
     print("Percent of requests that were successful:", format_f64(percent, 2), "%")
     
     c := Counter(lines_filtered[:])
